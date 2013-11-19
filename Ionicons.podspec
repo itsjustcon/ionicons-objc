@@ -17,6 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.post_install do |library_representation|
     require 'rexml/document'
+    require 'xcodeproject'
 
     library = library_representation.library
     proj_path = library.user_project_path
@@ -27,9 +28,7 @@ Pod::Spec.new do |spec|
     puts
     puts 'PROJECT:'
     puts proj
-    proj.read.targets.each do |target|
-      puts target.name
-    end
+    puts proj.to_plist
 
     puts
     puts 'PATH:'
