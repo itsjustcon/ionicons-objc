@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
     puts
     puts 'PROJECT:'
     puts proj
-    puts proj.to_plist
+    puts proj.project
 
     puts
     puts 'PATH:'
