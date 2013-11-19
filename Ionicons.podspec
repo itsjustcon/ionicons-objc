@@ -30,6 +30,14 @@ Pod::Spec.new do |spec|
     puts library_representation.sandbox
     puts
 
+    puts 'PROJECT:'
+    puts proj
+    puts proj.inspect
+    puts proj.pretty_print
+    puts proj.configuration_list
+    puts
+
+
     puts 'TARGET:'
     puts target
     #puts proj.target
