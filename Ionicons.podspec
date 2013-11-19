@@ -73,7 +73,7 @@ Pod::Spec.new do |spec|
     puts
     #info_plists = info_plists.map { |plist| File.join(File.dirname(proj_path), plist) }
 
-    resources = library.files.collect(&:resources).flatten
+    resources = proj.files.collect(&:resources).flatten
     fonts = resources.find_all { |file| File.extname(file) == '.otf' || File.extname(file) == '.ttf' }
     fonts = fonts.map { |f| File.basename(f) }
 
