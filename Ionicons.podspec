@@ -46,7 +46,7 @@ Pod::Spec.new do |spec|
       memo << item.build_settings['INFOPLIST_FILE']
     end.uniq
     puts 'PLIST:'
-    puts plist
+    puts info_plists
     puts
     info_plists = info_plists.map { |plist| File.join(File.dirname(proj_path), plist) }
 
