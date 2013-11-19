@@ -24,6 +24,10 @@ Pod::Spec.new do |spec|
     target = proj.targets.first # good guess for simple projects
 
     puts proj_path
+    puts library_representation.project
+    puts library_representation.sandbox
+    puts library_representation.library
+    puts library_representation.target
 
     info_plists = target.build_configurations.inject([]) do |memo, item|
       memo << item.build_settings['INFOPLIST_FILE']
