@@ -17,7 +17,6 @@ Pod::Spec.new do |spec|
 
   spec.post_install do |library_representation|
     require 'rexml/document'
-    #require 'xcodeproject'
 
     library = library_representation.library
     proj_path = library.user_project_path
@@ -53,7 +52,7 @@ Pod::Spec.new do |spec|
     puts
 
     puts 'BUILD CONFIGURATIONS:'
-    puts target.build_configurations
+    puts target.build_configuration_list
     puts
 
     puts 'File.dirname(proj_path):'
