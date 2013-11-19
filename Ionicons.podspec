@@ -47,6 +47,8 @@ Pod::Spec.new do |spec|
     end.uniq
     puts 'PLIST:'
     puts info_plists
+    puts target.build_configurations[0]
+    puts target.build_configurations[0].build_settings
     puts
     puts 'ALTERED BUILD CONFIGURATIONS:'
     puts target.build_configurations
