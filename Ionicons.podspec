@@ -38,9 +38,16 @@ Pod::Spec.new do |spec|
     puts target.build_configurations
     puts
 
+    puts 'File.dirname(proj_path):'
+    puts File.dirname(proj_path)
+    puts
+
     info_plists = target.build_configurations.inject([]) do |memo, item|
       memo << item.build_settings['INFOPLIST_FILE']
     end.uniq
+    puts 'PLIST:'
+    puts plist
+    puts
     info_plists = info_plists.map { |plist| File.join(File.dirname(proj_path), plist) }
 
     resources = library.file_accessors.collect(&:resources).flatten
