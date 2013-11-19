@@ -40,7 +40,7 @@ Pod::Spec.new do |spec|
     puts proj
     #puts proj.attributes
     puts proj.pretty_print
-    puts proj.configurations  # NO BUENO!
+    #puts proj.configurations  # NO BUENO!
     #puts library_representation.attributes
     #puts library_representation.pretty_print
     puts
