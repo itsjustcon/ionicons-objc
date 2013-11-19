@@ -10,8 +10,8 @@ Pod::Spec.new do |spec|
   #spec.source_files = '*.{h,m,plist}'
   #spec.resources = [ 'Ionicons.plist' ]
   spec.source_files = '*.{h,m}'
-  spec.resources = [ 'ionicons.ttf' ]
-  spec.resource_bundles = { 'Ionicons' => ['ionicons.ttf'] }
+  spec.resources = [ 'ionicons.ttf', 'Ionicons.plist' ]
+  #spec.resource_bundles = { 'Ionicons' => ['ionicons.ttf'] }
   spec.requires_arc = true
-  #spec.xcconfig = { 'INFOPLIST_FILE' => 'Ionicons.plist' }
+  spec.xcconfig = { 'INFOPLIST_FILE' => 'Ionicons.plist' }
 end
