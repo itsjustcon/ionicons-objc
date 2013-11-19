@@ -21,7 +21,8 @@ Pod::Spec.new do |spec|
 
     library = library_representation.library
     proj_path = library.user_project_path
-    proj = Xcodeproj::Project.new(proj_path)
+    #proj = Xcodeproj::Project.new(proj_path)
+    proj = library_representation.project
     #target = proj.targets.first # good guess for simple projects
     target = library_representation.target
 
