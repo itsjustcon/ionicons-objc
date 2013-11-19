@@ -7,9 +7,10 @@ Pod::Spec.new do |spec|
   spec.summary  = 'Use the beautiful Ionicons font (http://ionicons.com/) in your native Objective-C projects.'
   spec.source   = { :git => 'https://github.com/itsjustcon/ionicons-objc.git' }
   spec.platform = :ios, '5.0'
-  spec.source_files = '*.{h,m,plist}'
-  spec.resources = [ 'Ionicons.plist' ]
-  spec.resource_bundles = { 'Ionicons' => ['Ionicons.plist', 'ionicons.ttf'] }
+  #spec.source_files = '*.{h,m,plist}'
+  #spec.resources = [ 'Ionicons.plist' ]
+  spec.source_files = '*.{h,m}'
+  spec.resource_bundles = { 'Ionicons' => ['ionicons.ttf'] }
   spec.requires_arc = true
-  spec.xcconfig = { 'INFOPLIST_FILE' => 'Ionicons.plist' }
+  #spec.xcconfig = { 'INFOPLIST_FILE' => 'Ionicons.plist' }
 end
