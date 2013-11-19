@@ -32,7 +32,7 @@ Pod::Spec.new do |spec|
 
     puts 'TARGET:'
     puts target
-    puts proj.target
+    #puts proj.target
     puts proj.targets
     puts
 
