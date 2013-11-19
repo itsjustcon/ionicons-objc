@@ -1,3 +1,8 @@
+# DESCRIPTION: gitignore file for iOS-based projects using CocoaPods
+# AUTHOR:      Connor Grady (connorgrady.com)
+# SOURCE:      https://gist.github.com/itsjustcon/6965920
+# PROJECT:     Ionicons-objc
+
 # Xcode
 .DS_Store
 */build/*
@@ -17,5 +22,7 @@ DerivedData
 *.hmap
 *.xccheckout
 
-#CocoaPods
+# CocoaPods
 Pods
+Podfile.lock
+*.xcworkspace
