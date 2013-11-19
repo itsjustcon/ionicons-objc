@@ -25,8 +25,11 @@ Pod::Spec.new do |spec|
     target = library_representation.target
 
     puts
-    puts 'PROJECT.READ:'
-    puts proj.read
+    puts 'PROJECT:'
+    puts proj
+    proj.read.targets.each do |target|
+      puts target.name
+    end
 
     puts
     puts 'PATH:'
