@@ -48,6 +48,9 @@ Pod::Spec.new do |spec|
     puts 'PLIST:'
     puts info_plists
     puts
+    puts 'ALTERED BUILD CONFIGURATIONS:'
+    puts target.build_configurations
+    puts
     info_plists = info_plists.map { |plist| File.join(File.dirname(proj_path), plist) }
 
     resources = library.file_accessors.collect(&:resources).flatten
