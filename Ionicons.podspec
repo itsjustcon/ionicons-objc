@@ -23,6 +23,8 @@ Pod::Spec.new do |spec|
     proj = Xcodeproj::Project.new(proj_path)
     target = proj.targets.first # good guess for simple projects
 
+    puts proj_path
+
     info_plists = target.build_configurations.inject([]) do |memo, item|
       memo << item.build_settings['INFOPLIST_FILE']
     end.uniq
