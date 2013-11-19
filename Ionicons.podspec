@@ -20,8 +20,8 @@ Pod::Spec.new do |spec|
 
     library = library_representation.library
     proj_path = library.user_project_path
-    #proj = Xcodeproj::Project.new(proj_path)
-    proj = library_representation.project
+    proj = Xcodeproj::Project.new(proj_path)
+    #proj = library_representation.project
     #target = proj.targets.first # good guess for simple projects
     target = library_representation.target
 
@@ -70,7 +70,7 @@ Pod::Spec.new do |spec|
     puts 'ALTERED BUILD CONFIGURATIONS:'
     puts target.build_configurations
     puts
-    info_plists = info_plists.map { |plist| File.join(File.dirname(proj_path), plist) }
+    #info_plists = info_plists.map { |plist| File.join(File.dirname(proj_path), plist) }
 
     resources = library.file_accessors.collect(&:resources).flatten
     fonts = resources.find_all { |file| File.extname(file) == '.otf' || File.extname(file) == '.ttf' }
