@@ -23,11 +23,23 @@ Pod::Spec.new do |spec|
     proj = Xcodeproj::Project.new(proj_path)
     target = proj.targets.first # good guess for simple projects
 
+    puts '\nPATH:'
     puts proj_path
     puts library_representation.project
+    puts library_representation.project.path
     puts library_representation.sandbox
+
+    puts '\nLIBRARY:'
+    puts library
     puts library_representation.library
+
+    puts '\nTARGETS:'
+    puts target
     puts library_representation.target
+
+    puts '\nBUILD CONFIGURATIONS:'
+    puts target.build_configurations
+    puts library_representation.target.build_configurations
 
     info_plists = target.build_configurations.inject([]) do |memo, item|
       memo << item.build_settings['INFOPLIST_FILE']
