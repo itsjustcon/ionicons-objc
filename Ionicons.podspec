@@ -9,6 +9,7 @@ Pod::Spec.new do |spec|
   spec.platform = :ios, '5.0'
   spec.source_files = '*.{h,m}'
   spec.resources = [ 'ionicons.ttf' ]
+  spec.frameworks = 'Foundation', 'UIKit'
   spec.requires_arc = true
 
   spec.pre_install do |pod, library_representation|

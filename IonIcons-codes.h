@@ -439,7 +439,3 @@
 #define ion_social_android_outline @"\uf224"
 #define ion_social_windows @"\uf247"
 #define ion_social_windows_outline @"\uf246"
-
-@interface IonIcons : NSObject
-
-@end
