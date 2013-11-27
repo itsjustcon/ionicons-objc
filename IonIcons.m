@@ -25,6 +25,10 @@
 
 #pragma mark - NSAttributedString
 
++ (NSAttributedString *)attributedStringWithIcon:(NSString *)icon size:(CGFloat)size {
+    return [[NSAttributedString alloc] initWithString:icon attributes:@{ NSFontAttributeName:[self fontWithSize:size] }];
+}
+
 + (NSAttributedString *)attributedStringWithIcon:(NSString *)icon text:(NSString *)text size:(CGFloat)size {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ %@", icon, text]
                                                                                          attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:size] }];
@@ -66,6 +70,24 @@
 
 + (UILabel *)autoresizingLabelWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color {
     return [UILabel new];
+}
+
+
+
+#pragma mark - UIButton+IonIcons
+
++ (UIButton *)buttonWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color {
+    return [self buttonWithIcon:icon fontSize:fontSize color:color highlightColor:nil];
+}
+
++ (UIButton *)buttonWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color highlightColor:(UIColor *)highlightColor {
+    UIButton *btn = [UIButton new];
+    btn.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    btn.titleLabel.font = [self fontWithSize:fontSize];
+    [btn setTitle:icon forState:UIControlStateNormal];
+    if (color)          [btn setTitleColor:color forState:UIControlStateNormal];
+    if (highlightColor) [btn setTitleColor:highlightColor forState:UIControlStateHighlighted];
+    return btn;
 }
 
 

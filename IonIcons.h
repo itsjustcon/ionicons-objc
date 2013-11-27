@@ -14,6 +14,7 @@ typedef enum {
 + (UIFont *)fontWithSize:(CGFloat)fontSize;
 
 // NSAttributedString+IonIcons
++ (NSAttributedString *)attributedStringWithIcon:(NSString *)icon size:(CGFloat)size;
 + (NSAttributedString *)attributedStringWithIcon:(NSString *)icon text:(NSString *)text size:(CGFloat)size;
 + (NSAttributedString *)attributedStringWithIcon:(NSString *)icon iconPosition:(IonIconPosition)iconPosition iconColor:(UIColor *)iconColor iconSize:(CGFloat)iconSize
                                             text:(NSString *)text textAttributes:(NSDictionary *)textAttributes;
@@ -24,6 +25,9 @@ typedef enum {
 // UILabel+IonIcons
 + (UILabel *)labelWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color;
 + (UILabel *)autoresizingLabelWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color;
+
+// UIButton+IonIcons
++ (UIButton *)buttonWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color highlightColor:(UIColor *)highlightColor;
 
 // UIBarButtonItem+IonIcons
 + (UIBarButtonItem *)barButtonItemWithIcon:(NSString *)icon target:(id)target action:(SEL)action;  // color = white
