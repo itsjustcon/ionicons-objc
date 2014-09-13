@@ -56,8 +56,33 @@
 
 #pragma mark - UIImage+IonIcons
 
-+ (UIImage *)imageWithIcon:(NSString *)icon color:(UIColor *)color fontSize:(CGFloat)fontSize imageSize:(CGSize)imageSize {
-    return [UIImage new];
++ (UIImage *)imageWithIcon:(NSString *)icon color:(UIColor *)color fontSize:(CGFloat)fontSize {
+    //return [UIImage new];
+    
+    /*
+    UIBezierPath *rect = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 1)];
+    rect.lineWidth = 0;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(1,1), NO, 0.0f);
+    [color setFill];
+    [rect fill];
+    [rect stroke];
+    [rect addClip];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    */
+    
+    NSDictionary *attributes = @{ NSFontAttributeName:[self fontWithSize:fontSize], NSForegroundColorAttributeName:color };
+    
+    CGSize imageSize = [icon sizeWithAttributes:attributes];
+    
+    //UIGraphicsBeginImageContext(imageSize);
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0f);
+    [icon drawAtPoint:CGPointZero withAttributes:attributes];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 
@@ -65,7 +90,12 @@
 #pragma mark - UILabel+IonIcons
 
 + (UILabel *)labelWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color {
-    return [UILabel new];
+    UILabel *label = [UILabel new];
+    if (color) label.textColor = color;
+    label.font = [self fontWithSize:fontSize];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = icon;
+    return label;
 }
 
 + (UILabel *)autoresizingLabelWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color {

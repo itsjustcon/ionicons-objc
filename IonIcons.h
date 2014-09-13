@@ -20,7 +20,7 @@ typedef enum {
                                             text:(NSString *)text textAttributes:(NSDictionary *)textAttributes;
 
 // UIImage+IonIcons
-+ (UIImage *)imageWithIcon:(NSString *)icon color:(UIColor *)color fontSize:(CGFloat)fontSize imageSize:(CGSize)imageSize;
++ (UIImage *)imageWithIcon:(NSString *)icon color:(UIColor *)color fontSize:(CGFloat)fontSize;
 
 // UILabel+IonIcons
 + (UILabel *)labelWithIcon:(NSString *)icon fontSize:(CGFloat)fontSize color:(UIColor *)color;
